@@ -1,9 +1,6 @@
-![HTML to CSV & CSV to HTML Tool](html-table-csv-converter-logo.png)
-
 <p align="center">
   <img src="https://github.com/HousebirdGames/html-table-csv-converter/blob/2b7b06bc4af11af09c53b0183a836cad957560bd/html-table-csv-converter-logo%20630x500.png" width="200">
 </p>
-
 
 # HTML Table/CSV Online Converter
 
