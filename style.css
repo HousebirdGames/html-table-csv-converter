@@ -1,0 +1,282 @@
+:root {
+    --background: #f4f4f4;
+    --textColor: #2e2e2e;
+    --accent: #269fdb;
+    --accentActive: #56c2f6;
+    --accentInactive: #026ca1;
+    --accentDisabled: #839ba7;
+    --accentContrast: white;
+    --boxShadow: 0 0 0.4rem #2e2e2e81;
+    --fontFamily: 'Red_Hat_Display', sans-serif;
+}
+
+html,
+body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    font-family: var(--fontFamily);
+    background-color: var(--background);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+    font-size: 1rem;
+}
+
+@font-face {
+    font-family: 'Red_Hat_Display';
+    src: url('fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf');
+    font-display: swap;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    color: var(--accentInactive);
+}
+
+h2 {
+    display: none;
+}
+
+p {
+    text-align: justify;
+}
+
+.headingContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+    width: 100%;
+}
+
+.logo {
+    height: 100%;
+    max-height: 4.2rem;
+    width: auto;
+    border-radius: 0.4rem;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 50rem;
+    margin: 4rem 0;
+    padding: 20px;
+    background: white;
+    box-shadow: var(--boxShadow);
+    border-radius: 8px;
+    transition: all 1s ease-out;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 90%;
+}
+
+.section {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    display: none;
+}
+
+.section.active {
+    display: flex;
+}
+
+textarea,
+#resultContainer {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--textColor);
+    border-radius: 4px;
+    background: var(--background);
+    box-sizing: border-box;
+    margin: 0;
+    resize: none;
+    height: 240px;
+}
+
+textarea::placeholder {
+    font-family: var(--fontFamily);
+    font-size: 1rem;
+    color: var(--textColor);
+}
+
+.infoText {
+    text-align: center;
+}
+
+p {
+    width: 100%;
+    margin: 0;
+}
+
+button {
+    font-family: var(--fontFamily);
+    background-color: var(--accentInactive);
+    color: var(--accentContrast);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--accent);
+}
+
+button:enabled:active:not(.chooseConversion) {
+    scale: 0.95;
+    background-color: var(--accentActive);
+}
+
+button:disabled {
+    background-color: var(--accentDisabled);
+    cursor: default;
+}
+
+#resultContainer {
+    width: 100%;
+    display: flex;
+    transition: all 0.4s ease-out;
+    overflow: scroll;
+}
+
+.pop {
+    animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 0.95;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.chooseConversionContainer,
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.chooseConversionContainer {
+    gap: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    flex-wrap: nowrap;
+}
+
+button.chooseConversion {
+    border-radius: 0;
+    background-color: var(--accentInactive);
+}
+
+button.chooseConversion:hover {
+    border-radius: 0;
+    background-color: var(--accent);
+}
+
+button.chooseConversion.active {
+    border-radius: 0;
+    background-color: var(--accentActive);
+}
+
+#htmlText table {
+    border-collapse: collapse;
+}
+
+#htmlText table,
+#htmlText th,
+#htmlText td {
+    border: 1px solid #2e2e2e81;
+    padding: 0.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accentActive);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: var(--boxShadow);
+}
+
+footer p {
+    width: fit-content;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+        padding-bottom: 4rem;
+    }
+
+    footer {
+        background: var(--background);
+    }
+}
+
+@media screen and (max-width: 740px) {
+    footer {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        max-height: 3.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .chooseConversionContainer {
+        flex-direction: column;
+    }
+}

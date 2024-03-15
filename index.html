@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table/CSV Online Converter - Easy Conversion Tool</title>
+    <meta name="description"
+        content="Convert HTML tables to CSV format and vice versa with this easy-to-use online tool.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="html-table-csv-converter-logo.png">
+    <link rel="canonical" href="https://housebird.games/html-table-csv-converter">
+    <meta property="og:title" content="HTML Table/CSV Online Converter">
+    <meta property="og:description" content="Easily convert HTML tables to CSV and vice versa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://housebird.games/html-table-csv-converter">
+    <meta property="og:image"
+        content="https://housebird.games/html-table-csv-converter/html-table-csv-converter-logo.png">
+</head>
+
+<body>
+    <div class="container" role="main">
+        <div class="headingContainer">
+            <img class="logo" src="html-table-csv-converter-logo.png">
+            <h1>HTML to CSV &<br>CSV to HTML Tool</h1>
+        </div>
+        <p>Welcome to this free converter tool, designed for your convenience. This tool operates entirely within your
+            browser, ensuring that no data is transmitted to our servers. As a result, performance may vary based on
+            your device's capabilities. Please be aware that we offer this tool 'as is' and cannot accept liability for
+            its output or use.</p>
+        <br>
+
+        <div class="chooseConversionContainer" role="group" aria-label="Conversion Type">
+            <button class="chooseConversion active" id="convertHTMLtoCSV" aria-pressed="true">HTML > CSV</button>
+            <button class="chooseConversion" id="convertCSVtoHTML" aria-pressed="false">CSV > HTML</button>
+        </div>
+
+        <div class="section active" id="HTMLtoCSV" role="form" aria-labelledby="convertHTMLtoCSV">
+            <h2>Convert a HTML Table to CSV</h2>
+            <textarea id="htmlInput" aria-label="HTML Input" placeholder="Paste your HTML table here"></textarea>
+            <div class="buttonContainer">
+                <button id="htmlExampleButton">Try Example</button>
+                <button id="convertButton">Convert to CSV</button>
+            </div>
+            <div id="resultContainer" class="scrollContainer" tabindex="0" aria-label="CSV Conversion Result">
+                <p id="csvText">Your CSV content will be displayed here</p>
+            </div>
+            <div class="buttonContainer">
+                <button id="copyCSVButton" disabled aria-disabled="true">Copy CSV to clipboard</button>
+                <button id="downloadButton" disabled aria-disabled="true">Download CSV</button>
+            </div>
+        </div>
+
+        <div class="section" id="CSVtoHTML" role="form" aria-labelledby="convertCSVtoHTML">
+            <h2>Convert CSV to a HTML Table</h2>
+            <textarea id="csvInput" aria-label="CSV Input" placeholder="Paste your CSV data here"></textarea>
+            <div class="buttonContainer">
+                <button id="csvExampleButton">Try Example</button>
+                <button id="convertCsvToHtmlButton">Convert to HTML Table</button>
+            </div>
+            <div id="resultContainer" class="scrollContainer" tabindex="0" aria-label="HTML Conversion Result">
+                <p id="htmlText">Your HTML table will be displayed here</p>
+            </div>
+            <button id="copyHTMLButton" disabled aria-disabled="true">Copy HTML to clipboard</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <footer id="infoBox" role="contentinfo">
+        <p>This is a converter created by
+            <a href="https://stubenvogel.com">Felix T. Vogel</a>
+        </p>
+        <div class="buttonContainer" role="navigation">
+            <a href="https://housebird.games">housebird.games</a>
+            <a href="https://stubenvogel.com/impressum/">Legal Notice</a>
+            <a href="https://housebird.games/privacy-policy">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+
+</html>
